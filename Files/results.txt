@@ -1,0 +1,2 @@
+ANALYSIS for myFile.txt
+Number of words is 5

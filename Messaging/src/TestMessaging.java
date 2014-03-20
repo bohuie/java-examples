@@ -1,7 +1,6 @@
 
 public class TestMessaging
 {
-
   /**
    * @param args
    * @return void
@@ -10,7 +9,7 @@ public class TestMessaging
   {
     MessageBuddy sara = new MessageBuddy( "Sara" );
     MessageBuddy tori = new MessageBuddy( "Tori" );
-
+    
     sara.createMessage();
     sara.sendMessage( tori );
     

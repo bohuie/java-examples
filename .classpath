@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Bet/src"/>
+	<classpathentry kind="src" path="Car/src"/>
+	<classpathentry kind="src" path="CDPlayer/src"/>
+	<classpathentry kind="src" path="Checkings/src"/>
+	<classpathentry kind="src" path="Dog/src"/>
+	<classpathentry kind="src" path="FeedMe/src"/>
+	<classpathentry kind="src" path="GameDesign/src"/>
+	<classpathentry kind="src" path="HierarchicalClustering/src"/>
+	<classpathentry kind="src" path="LanguageProcessing/src"/>
+	<classpathentry kind="src" path="Library/src"/>
+	<classpathentry kind="src" path="Messaging/src"/>
+	<classpathentry kind="src" path="Postcard/src"/>
+	<classpathentry kind="src" path="QuickTests/src"/>
+	<classpathentry kind="src" path="Restaurant/src"/>
+	<classpathentry kind="src" path="Robot/src"/>
+	<classpathentry kind="src" path="Storybook/src"/>
+	<classpathentry kind="src" path="TreasureGame/src"/>
+	<classpathentry kind="src" path="Trivia/src"/>
+	<classpathentry kind="src" path="VendingMachine/src"/>
+	<classpathentry kind="src" path="Voting/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="Voting/bin"/>
+</classpath>

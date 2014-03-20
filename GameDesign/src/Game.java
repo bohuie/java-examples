@@ -1,11 +1,18 @@
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * class to control overall flow of a game and user interaction for activity selection
+ * this class requires Activity class and is tested via TestGameDesign
+ * (TestActivity is not used anymore)
+ * 
+ * @author bowen hui
+ */
 public class Game
 {
   private Random  generator;
   private Activity nextNum, tellTime;
-  private Scanner sysin;
+  private Scanner sysin, sysin2;
   
   // constants
   public static final int MAXNUM = 500;
@@ -17,13 +24,15 @@ public class Game
   public Game()
   {
     generator = new Random();
+    sysin = new Scanner( System.in );
+    sysin2 = new Scanner( System.in );
+    
     nextNum = new Activity();
     nextNum.setInstructions( "What is the next number after this one?" );
     
     tellTime = new Activity();
     tellTime.setInstructions( "How many minutes are there if the following number is in seconds?" );
     
-    sysin = new Scanner( System.in );
     beginGame();
   }
   
@@ -38,9 +47,9 @@ public class Game
     System.out.println( "Activity 1: One, two, thre, ..." );
     System.out.println( "Activity 2: How many minutes is it?" );
     
-    String userInput = sysin.nextLine();
-    int activityNum = Integer.parseInt( userInput );
-    playActivity( activityNum );
+    int userInput = sysin.nextInt();
+    System.out.println( "You entered: " + userInput );
+    playActivity( userInput );
   }
   
   /**
@@ -63,8 +72,10 @@ public class Game
       tellTime.play();      
     }
     
-    System.out.println( "\nDo you want to play again? (y/n)" );    
-    String userInput = sysin.nextLine();
+    System.out.println( "\nDo you want to play again? (Type: y/n)" );
+    String userInput = sysin2.nextLine();
+    
+    System.out.println( "You entered: " + userInput );
     if( userInput.charAt( 0 ) == 'y' )
       beginGame();
     else

@@ -1,0 +1,181 @@
+<title>COSC 121 </title>
+<body bgcolor=#ffffff text="#00000d6" link="#666600" vlink="#661116" alink="#CC3300">
+
+<h1>Assignment 2</h1>
+
+Be sure to type up your answers so you can submit them electronically on the
+BlackBoard Connect system. You may complete this assignment individually.
+Make sure all your files have your full name and student number on it. 
+<p>
+Type up your answers using Eclipse.
+The file format of the Java program you are to submit must be .java.
+<p>
+This assignment is marked out of N points. 
+
+<h3>Due Date</h3>
+February 15, 2014, 11:59AM (just before noon).
+
+<h3>24 Hour Silence Policy</h3>
+Due to the large class size and the potential volume of questions, we are
+implementing a 24-hour silence policy. This means that any questions posted on
+the discussion forum in the 24 hours immediately preceding the assignment
+deadline <b>may not</b> get answered in time. This does not mean that we will
+stop answering questions the moment the day before the deadline arrives, it just means
+that we cannot promise all the questions will be answered in time, due to our
+prior engagements, such as other classes and meetings we have.
+<p>
+For this reason, please be sure to attempt the assignment early, and try to
+complete it as if it were due two days prior to the real deadline.
+<p>
+In any case, we will try to answer all the questions that show up on the
+discussion forum. Note that questions sent to emails will <b>not</b> be
+answered, as we want all course related material to be viewed for everyone's
+benefit.
+<p>
+
+<h3>What You Are Given</h3>
+There are 2 questions in this assignment. The first question is to practice
+polymorphism, and the second is on files.
+
+
+<h3>Question 1 [21 points]</h3>
+You are going to write a program that calculates the price of clothing with
+the appropriate provincial tax. The store will manage clothing from British
+Columbia, which has a PST of 7%,  and Manitoba, which as a PST of 8%.
+Moreover, we will have two types of clothing: children and adult. Note that
+children clothing does not get taxed in any province.
+<p>
+
+In this question, complete the following:
+<ul>
+  <li> <b>4 points</b>: 
+  Define an abstract class called <tt>Clothing</tt> that contains information
+  about the clothing's brand and price (before tax). 
+  This class should have a constructor that initializes the attributes.
+  This class should also have an abstract method called <tt>total()</tt> that
+  returns the price of the clothing item after taxes have been applied.
+
+  <li> <b>3 points</b>: 
+  Define a class called <tt>Children</tt> that inherits from <tt>Clothing</tt>. 
+  This class needs to have a constructor that initializes the brand and price.
+  As well, this class will define the <tt>total()</tt> method.
+  Finally, this class will define the <tt>toString()</tt> method to printing
+  out all the attributes and final price after taxes of the item.
+
+  <li> <b>4 points</b>: 
+  Define a class called <tt>Adult</tt> that inherits from <tt>Clothing</tt>. 
+  This class needs to have a constructor that initializes the brand and price.
+  In addition, this class will define a constant <tt>GST</tt> at 0.05 to
+  denote 5% of GST will be applied to the item. Then, the class will define
+  the <tt>total()</tt> method which calculates the clothing price with GST
+  (but not PST) on it.
+  Finally, this class will define the <tt>toString()</tt> method to printing
+  out all the attributes and final price after taxes of the item.
+
+  <li> <b>5 points</b>: 
+  Define a class called <tt>BCAdult</tt> that inherits from <tt>Adult</tt>. 
+  This class needs to have a constructor that initializes the brand and price.
+  In addition, this class will define a constant <tt>PST</tt> at 0.07 to
+  denote 7% of PST will be applied to the item. Then, the class will define
+  the <tt>total()</tt> method which calculates the clothing price with GST and
+  PST on it. <b>Note:</b> You need to use the parent definition of
+  <tt>total()</tt> for this part.
+  Finally, this class will define the <tt>toString()</tt> method to printing
+  out all the attributes and final price after both taxes of the item.
+  <p>
+  Define a class called <tt>MBAdult</tt> in the exact same way as you did for
+  <tt>BCAdult</tt>. Follow the steps above. The only thing you should change
+  is the class constant for MB tax, where the constant <tt>PST</tt> in this
+  class is defined as 0.08 to denote 8% of PST.
+
+  <li> <b>5 points</b>: 
+  Define a test class called <tt>Purchases</tt> that creates a polymorphic
+  array of five <tt>Clothing</tt> references.
+  Initialize the array with a variety of clothing objects, but be sure to
+  include at least one of: Children, BCAdult, and MBAdult.
+  Write a loop to print out the items by calling each array item's
+  <tt>toString()</tt> method (implicitly or explicitly).
+</ul>
+
+See <a href=a2q1-output.html>sample output</a> from the test class. 
+Save your output into a file called <tt>Clothing-Output.txt</tt>.
+
+<h3>Question 2 [13 points]</h3>
+Write a simple HTML parser called <tt>TagParser</tt> that takes an input HTML
+file, extracts all the words between the an opening and closing pair of "tt"
+tags, and output those words (without the tags) into a plain text file.
+<p>
+An HTML file is a type of file used for websites. Unlike word, there is no
+function like boldface or italicize. To specify when a word should be
+displayed in a different way, tags are used. For example, to make a phrase
+bold, you would type "< b >a bold phrase< / b >" where "b" stands for bold and the
+angle brackets denote the tag. (There are no spaces inside the tags when you
+use them, they are just here for clarity.) In order for a computer to
+understand the difference between when it should start to bold and when it
+should stop, an opening tag and a closing tag are used. The closing tag just
+has an extra "/" in it. In this question, we will work with the HTML tag for
+"teletype text" (tt for short).
+<p>
+
+In this question, complete the following:
+<ul>
+  <li> <b>3 points</b>: 
+  In the <tt>TagParser</tt> class, define a constructor that reads from a
+  file. You should download the file at: <br>
+  <tt>https://people.ok.ubc.ca/bowenhui/121/a2.html</tt><br>
+  and store it in your Eclipse project folder.
+  Your program will read this file as input and extract information from it.
+  In addition, your constructor will create a new file called
+  <tt>a2-tagsOnly.txt</tt> which will store all the output later.
+  Finally, your class will have a <tt>String</tt> array which will also be
+  initialized in your constructor. You should initialize all your array
+  elements to the following default string: "-1".
+
+  <li> <b>4 points</b>: 
+  Add a method called <tt>parseTT()</tt> that detects when a line has an
+  opening tt tag. Recall various <tt>String</tt> methods you can use here.
+  When you have such a line, find the index position where the opening tag
+  ends and the index position where the closing tag starts so you can extract
+  the words in between. Once you extract the words in between, store that
+  substring into your <tt>String</tt> array. When you are done, your array
+  will have 34 extracted phrases.
+
+  <li> <b>4 points</b>: 
+  Add a method called <tt>storeTT()</tt> that goes through each element in
+  your <tt>String</tt> array via a loop and outputs it onto a separate line in
+  the file you created earlier. Don't put any of the default values "-1" into
+  the file.  Be sure to close your file when you are done, otherwise it will
+  seem like you have not written anything to the file. 
+  
+  <li> <b>2 points</b>: 
+  Create a test class that gives the a2.html file to a <tt>TagParser</tt>
+  object. Call the two methods you've created to test your program. Be sure to
+  check your <tt>a2-tagsOnly.txt</tt> file to see if it has the information you
+  expect.
+</ul>
+
+See <a href=a2q2-output.html>sample file</a> from the test class. 
+There is no output from this class.
+
+<h3>What to Submit</h3>
+Be sure to comment all the methods and attributes for clarity.
+For this assignment, submit the following:
+
+<ul>
+<li> Clothing.java
+<li> Children.java
+<li> Adult.java
+<li> BCAdult.java
+<li> MBAdult.java
+<li> Clothing-Output.txt
+<li> TagParser.java
+<li> TestParser.java (or test class file you used)
+<li> a2-tagsOnly.txt
+
+<li> Include your full name and student ID. 
+
+<li> List the full names of the people who helped you in this assignment
+(include students and TAs if applicable), and mention what they helped you with
+-- failure to do so honestly will result in a lower mark and may be reported
+for academic discipline
+</ul>

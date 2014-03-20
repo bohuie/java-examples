@@ -1,0 +1,83 @@
+0: cluster (1): 
+  9,8
+1: cluster (1): 
+  7,8
+2: cluster (1): 
+  1,5
+3: cluster (1): 
+  3,8
+4: cluster (1): 
+  7,3
+
+merging ...
+	0: cluster (1): 
+  9,8
+
+	1: cluster (1): 
+  7,8
+
+	distance: 2.0
+0: cluster (2): 
+  9,8
+  7,8
+2: cluster (1): 
+  1,5
+3: cluster (1): 
+  3,8
+4: cluster (1): 
+  7,3
+
+merging ...
+	0: cluster (2): 
+  9,8
+  7,8
+
+	3: cluster (1): 
+  3,8
+
+	distance: 5.0
+0: cluster (3): 
+  9,8
+  7,8
+  3,8
+2: cluster (1): 
+  1,5
+4: cluster (1): 
+  7,3
+
+merging ...
+	0: cluster (3): 
+  9,8
+  7,8
+  3,8
+
+	4: cluster (1): 
+  7,3
+
+	distance: 7.0
+0: cluster (4): 
+  9,8
+  7,8
+  3,8
+  7,3
+2: cluster (1): 
+  1,5
+
+merging ...
+	0: cluster (4): 
+  9,8
+  7,8
+  3,8
+  7,3
+
+	2: cluster (1): 
+  1,5
+
+	distance: 8.25
+0: cluster (5): 
+  9,8
+  7,8
+  3,8
+  7,3
+  1,5
+

@@ -151,7 +151,7 @@ public class SentimentAnalysis
    */
   private boolean containsOneOf( String str, String[] targets )
   {
-    String[] words = str.split( "\\s" );
+    String[] words = str.split( "\\s" ); // \\s = [ \\t\\n\\x0B\\f\\r]
     boolean found = false;
     // check each word in str
     for( int i = 0; i < words.length; i++ )

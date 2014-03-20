@@ -1,12 +1,23 @@
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class Test
 {
 
   public static void main( String[] args )
   {
+    System.out.println( "Hello World!" );
+    int xx = 5;
+    int yy = 2;
+    System.out.println( "sum is " + (xx * yy) );
+    xx = 10;
+    System.out.println( "x = " + xx );
+    int sq = xx * xx;
+    System.out.println( "x = " + xx + " sq = " + sq );
+    String str = "averylongwordwithnospace";
+    System.out.println( str.substring( 2, 5 ) );
+    System.out.println( str.charAt( 3 ) );
+
     String greeting1 = "hello there";
     String greeting2 = "yo";
     String greeting3 = "hello";
@@ -14,20 +25,20 @@ public class Test
     System.out.println( "greeting1 = " + greeting1 );
     System.out.println( "greeting2 = " + greeting2 );
     System.out.println( "greeting3 = " + greeting3 );
-    
+
     greeting1 = greeting3;
     greeting2 = greeting3;
     System.out.println( "AFTER:" );
     System.out.println( "greeting1 = " + greeting1 );
     System.out.println( "greeting2 = " + greeting2 );
     System.out.println( "greeting3 = " + greeting3 );
-    
+
     greeting3 = "hey";
     System.out.println( "WHAT IF:" );
     System.out.println( "greeting1 = " + greeting1 );
     System.out.println( "greeting2 = " + greeting2 );
     System.out.println( "greeting3 = " + greeting3 );
-    
+
     Player one = new Player( 1, "ann" );
     Player two = new Player( 2, "bob" );
     Player thr = new Player( 3, "cam" );
@@ -59,17 +70,17 @@ public class Test
     System.out.println( "one = " + one.toString() );
     System.out.println( "two = " + two.toString() );
     System.out.println( "thr = " + thr.toString() );
-    
+
     System.out.println( "Testing scanner methods" );
     Scanner sysin = new Scanner( System.in );
     /*
-    System.out.println( sysin.nextInt() );
-    System.out.println( sysin.nextDouble() );
-    */
-    
+     * System.out.println( sysin.nextInt() ); System.out.println(
+     * sysin.nextDouble() );
+     */
+
     Random generator = new Random();
     System.out.println( generator.nextDouble() );
-    
+
     long time = System.currentTimeMillis();
     System.out.println( time );
     long x0, p1, p2, N, xi;
@@ -77,26 +88,26 @@ public class Test
     p1 = 234;
     p2 = 83;
     N = 100;
-    xi = p1*x0 + p2;
+    xi = p1 * x0 + p2;
     xi = xi % N;
     System.out.println( xi );
     x0 = xi;
-    xi = p1*x0 + p2;
+    xi = p1 * x0 + p2;
     xi = xi % N;
     System.out.println( xi );
     x0 = xi;
-    xi = p1*x0 + p2;
+    xi = p1 * x0 + p2;
     xi = xi % N;
     System.out.println( xi );
     x0 = xi;
-    xi = p1*x0 + p2;
+    xi = p1 * x0 + p2;
     xi = xi % N;
     System.out.println( xi );
     x0 = xi;
-    xi = p1*x0 + p2;
+    xi = p1 * x0 + p2;
     xi = xi % N;
     System.out.println( xi );
-    
+
     Recursion ex = new Recursion( time );
     x0 = ex.showX0();
     xi = ex.showXi();
@@ -104,8 +115,8 @@ public class Test
     xi = ex.computeAgain( xi );
     xi = ex.computeAgain( xi );
 
-    int    x = 50, y = 2;
-    double d = 100.0/y; 
+    int x = 50, y = 2;
+    double d = 100.0 / y;
     char c = '2';
     boolean found = false;
     if( x > y && !found )
@@ -120,41 +131,39 @@ public class Test
       System.out.println( "case 5" );
     if( 'B' < 'b' )
       System.out.println( "case 6" );
-    
+
     /*
-    for( int count=0; count<5; x=y )
-      System.out.println( count );
-    */
-    
+     * for( int count=0; count<5; x=y ) System.out.println( count );
+     */
+
     NYCountdown nycd = new NYCountdown( 10 );
-    
-    for( y=2;;y-- )
+
+    for( y = 2;; y-- )
     {
       System.out.println( y );
       if( y < 0 )
         break;
     }
-    
+
     Stars asciiStars = new Stars( 6 );
     asciiStars.drawStars();
     asciiStars.drawArrowHead();
-    
+
     MidtermStats mt2 = new MidtermStats( 200 );
     mt2.enterScores();
     System.out.println( "avg = " + mt2.calcAverage() );
-    
+
     System.out.println( "Type in a word: " );
     String aWord = sysin.nextLine();
     System.out.println( "your word spelled backwards: " );
-    for( int ch=aWord.length()-1; ch>=0; ch-- )
-      System.out.print(  aWord.charAt( ch ) );
+    for( int ch = aWord.length() - 1; ch >= 0; ch-- )
+      System.out.print( aWord.charAt( ch ) );
     System.out.println();
-    
+
     TriangularMatrix tm = new TriangularMatrix( 3 );
     System.out.println( tm.toString() );
     // tm.convertToLower();
     tm.convertToUpper();
     System.out.println( tm.toString() );
   }
-
 }

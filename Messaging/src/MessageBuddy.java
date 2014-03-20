@@ -7,9 +7,6 @@ public class MessageBuddy
   private String          inbox;
   private Scanner         sysin;
 
-  // constant
-  public static final int MAXLEN = 50;
-
   /*
    * constructor
    */
@@ -23,7 +20,7 @@ public class MessageBuddy
   }
 
   /**
-   * lets user type in a message but stores only MAXLEN of message
+   * lets user type in a message
    * 
    * @param void
    * @return void
@@ -32,10 +29,7 @@ public class MessageBuddy
   {
     System.out.println( user + ", type the message you want to send:" );
     String userInput = sysin.nextLine();
-    if( userInput.length() <= MAXLEN )
-      msg = userInput;
-    else
-      msg = userInput.substring( 0, MAXLEN );
+    msg = userInput;
   }
 
   /**
@@ -46,15 +40,8 @@ public class MessageBuddy
    */
   public void sendMessage( MessageBuddy friend )
   {
-    if( msg.length() == 0 )
-      System.err.println( "There is no message to send" );
-    else
-    {
-      System.out.println( user + ", your message has been sent" );
-      friend.receiveMessage( msg );
-      msg = "";
-
-    }
+    System.out.println( user + ", your message has been sent" );
+    friend.receiveMessage( msg, user );
   }
 
   /**
@@ -63,16 +50,11 @@ public class MessageBuddy
    * @param friendMessage
    * @return void
    */
-  private void receiveMessage( String friendMessage )
+  private void receiveMessage( String friendMessage, String senderName )
   {
     inbox = friendMessage;
-    System.out.println( user + ", you have a new message. Would you like to view it?" );
-    String userInput = sysin.nextLine();
-    if( userInput.equalsIgnoreCase( "yes" ) )
-    {
-      System.out.println( user + ", here's your message:" );
-      viewMessage();
-    }
+    System.out.println( user + ", you have a new message from " + senderName + ":" );
+    viewMessage();
   }
 
   /**

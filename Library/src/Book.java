@@ -8,7 +8,7 @@
  * - are any accessors or mutators needed?
  * - if we wanted to store a 13-digit ISBN number, how would we store it?
  * 
- * @author bohuie
+ * @author bowen hui
  */
 public class Book
 {
@@ -17,6 +17,7 @@ public class Book
   private String publisher;
   private int    year;
   private String branch;
+  private int    status;
 
   /**
    * constructor method
@@ -33,43 +34,50 @@ public class Book
     publisher = p;
     year      = y;
     branch    = "";
+    status    = Library.AVAILABLE;
   }
 
   /**
-   * mutator for library branch
+   * constructor method
    * 
-   * @param location
-   * @return void
+   * @param title
+   * @param author
+   * @param publisher
+   * @param year of publication
+   * @param branch name
+   * @param status
    */
-  public void setBranch( String location )
+  public Book( String t, String a, String p, int y, String b, int s )
   {
-    branch = location;
-  }
-
-  /**
-   * accessor for library branch
-   * 
-   * @param void
-   * @return location
-   */
-  public String getBranch()
-  {
-    return branch;
+    title     = t;
+    author    = a;
+    publisher = p;
+    year      = y;
+    branch    = b;
+    status    = s;
   }
   
   /**
-   * accessor for book title 
+   * mutators for class attributes
    * 
-   * @param void
-   * @return title
+   * @param new value for class attribute
+   * @return void
    */
-  public String getTitle()
-  {
-    return title;
-  }
+  public void setBranch( String location ) { branch = location;  }
+  public void setStatus( int newStatus )   { status = newStatus; }
 
   /**
-   * prints book info
+   * accessors for class attributes
+   * 
+   * @param void
+   * @return associated class attribute
+   */
+  public String getBranch() { return branch; }  
+  public int    getStatus() { return status; }
+  public String getTitle()  { return title;  }
+  
+  /**
+   * gathers book info
    * 
    * @param void
    * @return info
@@ -78,6 +86,11 @@ public class Book
   {
     String str = "";
     str += title + " (" + author + ", " + year + ") -- " + publisher;
+    str += " [" + Library.prStatus( status );
+    if( branch.equals( "" ) )
+      str += "]\n";
+    else
+      str += " at " + branch + "]\n";
     return str;
   }
 }

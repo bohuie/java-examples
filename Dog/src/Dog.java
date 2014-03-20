@@ -191,6 +191,31 @@ public class Dog
     return pstr;
   }
 
+  public void bark()
+  {
+    System.out.println( "woof" );
+  }
+  
+  private void ignore() {}
+  
+  public void respond( String dogName )
+  {
+    if( dogName.equals( name ) )
+      bark();
+    else
+      ignore();
+  }
+  
+  public String getName()
+  {
+    return name;
+  }
+  
+  public void setName( String newName )
+  {
+    name = newName;
+  }
+  
   /**
    * gives basic attributes about the dog
    * 

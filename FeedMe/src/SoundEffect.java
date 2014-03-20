@@ -124,7 +124,7 @@ public enum SoundEffect
    * @param void
    * @return void
    */
-  static void init()
+  public static void init()
   {
     values();  // this method calls the constructor for all the elements
   }
